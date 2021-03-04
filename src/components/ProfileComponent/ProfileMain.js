@@ -82,10 +82,6 @@ const ProfileMain = (props) => {
         <div className={styles.socialMediaSectionContainer}>
           {socialMediaLinks}
         </div>
-        <div className={styles.deleteAccount} onClick={props.deleteAccount}>
-          <FAICON iconName={constants.FADELETE} color='red' />
-          <p className={styles.deleteAccPara}>Delete</p>
-        </div>
       </div>
     </React.Fragment>
   );

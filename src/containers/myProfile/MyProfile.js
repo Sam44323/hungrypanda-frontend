@@ -52,30 +52,6 @@ class MyProfile extends Component {
       });
   }
 
-  deleteAccount = () => {
-    this.setState({ loading: true });
-    axios(
-      axiosMethod(
-        'DELETE',
-        `${process.env.REACT_APP_BACKEND_URL_USERS}/delete-account`,
-        null,
-        {
-          Authorization: `Bearer ${localStorage.getItem('token')}`,
-        }
-      )
-    )
-      .then(() => {
-        localStorage.clear();
-        this.props.history.replace('/auth/signup');
-      })
-      .catch((err) => {
-        if (err) {
-          console.dir(err);
-          this.setState({ loading: false, error: 'Network Error!' });
-        }
-      });
-  };
-
   render() {
     return (
       <React.Fragment>
@@ -106,7 +82,6 @@ class MyProfile extends Component {
               socialMedia={this.state.userData.socialMedia}
               location={this.state.userData.location}
               likedRecipes={this.state.userData.likedRecipes.length}
-              deleteAccount={this.deleteAccount}
               likedRecipesHandler={() =>
                 this.props.history.push('/liked-recipes')
               }

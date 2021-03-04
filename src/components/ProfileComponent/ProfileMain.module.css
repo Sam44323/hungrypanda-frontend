@@ -1,0 +1,198 @@
+/*STYLE FOR MAIN SECTION*/
+
+.userSectionMain {
+  background-color: #fa8072;
+  border-radius: 4px;
+  margin-bottom: 40px;
+  padding: 10px 0px;
+  color: black;
+  border-left: 4px solid #222831;
+  border-right: 4px solid #222831;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.87);
+}
+
+/*STYLE FOR THE IMAGE SECTION*/
+
+.userImageSection {
+  text-align: center;
+}
+
+.userImage {
+  width: 170px;
+  height: 170px;
+  position: relative;
+  bottom: 40px;
+  border-radius: 90px;
+  box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.47);
+}
+
+/*STYLE FOR THE USER NAME*/
+.userNameHeading {
+  margin: 10px auto;
+  text-align: center;
+  font-size: 1.6rem;
+  color: brown;
+  background-color: white;
+  width: 70%;
+  padding: 10px 4px;
+  border-radius: 1px;
+  border-left: 4px solid black;
+  border-right: 4px solid black;
+}
+
+/*STYLE FOR RECIPES AND THE LOVE COUNT AND THE LIKED SECTION*/
+
+.likedRecipesStyles {
+  text-align: center;
+  font-size: 1.14rem;
+  background-color: black;
+  color: wheat;
+  width: 30%;
+  max-width: 150px;
+  margin: 0px auto;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.likedRecipesStyles:hover {
+  background-color: white;
+  color: black;
+  box-shadow: 0px 2px 6px 1px rgba(0, 0, 0, 0.93);
+}
+
+.recipesLoveDivSection {
+  width: 80%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.recipesLove {
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 10px 10px;
+  color: brown;
+  background-color: white;
+  padding: 10px;
+  border-left: 4px solid black;
+  border-right: 4px solid black;
+}
+
+/*BUTTON SECTION STYLING*/
+.editButtonSection {
+  text-align: end;
+}
+
+.userProfileButton {
+  padding: 10px 6px;
+  font-size: 1.1rem;
+  outline: none;
+  border: 0px;
+  background-color: #222831;
+  color: white;
+  border-radius: 4px;
+}
+
+.userProfileButton:hover,
+.userProfileButton:active {
+  background-color: white;
+  color: black;
+}
+
+/*STYLE FOR THE SUB SECTION OF USER*/
+
+.userDetailSub {
+  background-color: #fde8cd;
+  border-radius: 4px;
+  padding: 0px 0px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.87);
+}
+
+.subSecFirst {
+  background-color: #222831;
+  color: white;
+}
+
+.nameTag {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 2.1rem;
+  margin-bottom: 0px;
+  text-transform: capitalize;
+  background-color: white;
+  border-bottom: 3px solid #222831;
+  border-left: 4px solid coral;
+  border-right: 4px solid coral;
+  color: black;
+}
+
+.ageLocSection {
+  text-align: center;
+  background-color: white;
+  color: black;
+  width: 80%;
+  margin: 0px auto;
+  border-left: 4px solid coral;
+  border-right: 4px solid coral;
+}
+
+.ageLoc {
+  display: inline-block;
+  margin: 4px;
+  text-transform: capitalize;
+  font-size: 1.1rem;
+}
+
+.emailTagSection {
+  text-align: center;
+  padding: 10px 0px;
+  width: 10%;
+  margin: auto;
+  font-size: 0.7rem;
+}
+
+.emailIconsStyle {
+  font-size: 1.9rem;
+}
+.emailTagSection:hover {
+  color: salmon;
+  cursor: pointer;
+}
+
+.socialMediaSectionContainer {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.socialMediaSectionDiv {
+  font-size: 1.3rem;
+  display: inline-block;
+  margin: 4px 30px;
+  color: coral;
+}
+
+.socialMediaSectionDiv:hover {
+  color: black;
+}
+
+.deleteAccount {
+  text-align: center;
+}
+
+.deleteAccPara {
+  margin: 0px;
+  font-size: 0.7rem;
+  color: red;
+}
+
+.deleteAccPara:hover {
+  color: black;
+  cursor: pointer;
+}
+
+@media (min-width: 760px) {
+  .userSectionMain,
+  .userDetailSub {
+    width: 700px;
+    margin: 0px auto;
+  }
+}

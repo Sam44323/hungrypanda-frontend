@@ -1,0 +1,34 @@
+input:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 50px white inset;
+}
+
+.profileFormMain {
+  width: 80%;
+  margin: 130px auto;
+}
+
+.userDetailsSection,
+.socialMediaSection {
+  background-color: rgb(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding-bottom: 30px;
+  margin: auto;
+  max-width: 600px;
+}
+
+.userDataTitle,
+.userSocialMediaTitle {
+  padding: 15px 0px;
+  text-align: center;
+  font-family: inherit;
+  font-size: 1.5rem;
+  width: 80%;
+  margin: 10px auto;
+  border-bottom: 3px solid black;
+}
+
+.profileBtnSection {
+  text-align: center;
+  margin-top: 10px;
+}

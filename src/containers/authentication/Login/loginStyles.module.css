@@ -1,0 +1,26 @@
+.loginSectionDiv {
+  margin: 0px auto;
+  padding-bottom: 30px;
+  border-radius: 4px;
+  border-left: 5px solid saddlebrown;
+  border-right: 5px solid saddlebrown;
+  margin-top: 130px;
+  width: 80%;
+  max-width: 500px;
+  background-color: blanchedalmond;
+}
+
+.loginSectionTitle {
+  text-align: center;
+  width: 40%;
+  margin: 0px auto;
+  padding-top: 10px;
+  padding-bottom: 4px;
+  color: saddlebrown;
+  border-bottom: 3px solid chocolate;
+}
+
+.loginBtnSection {
+  text-align: center;
+  margin-top: 10px;
+}

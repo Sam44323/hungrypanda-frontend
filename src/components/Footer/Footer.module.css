@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+.footer {
+  background-color: black;
+  border-left: 3px solid coral;
+  border-right: 3px solid coral;
+  color: wheat;
+  padding: 1px;
+}
+
+.termOfServicePara {
+  text-align: center;
+  margin: 4px;
+}
+
+.termOfService {
+  text-decoration: none;
+  color: white;
+}
+
+.copyrighTitle {
+  font-size: 1rem;
+  text-align: center;
+  margin: 0px;
+  font-weight: lighter;
+}
+
+.termOfService:hover {
+  color: brown;
+}

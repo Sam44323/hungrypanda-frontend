@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+  box-shadow: 0 0 0px 1000px #000 inset;
+  transition: 5000s ease-in-out 0s;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0px auto;
+  margin-top: 90px;
+  border-bottom: 3px solid brown;
+  width: 70%;
+  max-width: 300px;
+}
+
+.formSection {
+  width: 90%;
+  margin: 30px auto;
+  padding: 10px;
+  background-color: rgb(255, 255, 255, 0.7);
+  border-radius: 30px;
+  max-width: 900px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.81);
+  overflow: hidden;
+}
+
+.ingredientsSection {
+  margin: 0px auto;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.ingTitle {
+  margin: 4px;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.ingValueDivision {
+  display: inline-block;
+}
+
+.ingValueStyle {
+  margin: 4px;
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
+  padding: 4px;
+  border-radius: 10px;
+  background-color: brown;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.ingValueSection {
+  border: 3px solid brown;
+  margin: 10px 0px;
+  border-radius: 10px;
+}
+
+.numberSection {
+  text-align: center;
+}
+
+.formBtnSection {
+  text-align: center;
+}
+
+/*FOR THE DEVICES OF TABLETS AND SOME BIGGER*/
+@media (min-width: 745px) and (max-width: 1024px) and (orientation: portrait) {
+  .formSection {
+    height: 80vh;
+  }
+}

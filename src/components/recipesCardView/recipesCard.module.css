@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Quattrocento Sans', sans-serif;
+  word-wrap: break-word;
+}
+
+/*STYLING FOR THE MAIN CARD CONTENT SECTION*/
+.mainCardContent {
+  text-align: center;
+  border-radius: 10px;
+  content: icon;
+  position: relative;
+  margin: 0px 30px;
+  margin-bottom: 100px;
+  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.71);
+  background-color: white;
+  padding: 10px 0px;
+  min-width: 200px;
+  border-radius: 0px 0px 10px 10px;
+}
+
+/*STYLING FOR THE TITLE*/
+.recipeTitle {
+  background-color: antiquewhite;
+  width: 40%;
+  margin: auto;
+  color: brown;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+/*STYLING FOR THE COOKTIME*/
+.cookingTime {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  width: 80%;
+  margin: 10px auto;
+  border-radius: 10px;
+  max-width: 300px;
+}
+
+/*STYLING FOR THE IMAGES*/
+
+.recipeImageContainer {
+  position: relative;
+  bottom: 40px;
+  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.4);
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border-radius: 4px;
+}
+.recipeImage {
+  border-radius: 4px;
+  height: 200px;
+  width: 200px;
+}
+
+/*STYLING FOR THE DESCRIPTION*/
+
+.recipeDescription {
+  font-size: 1rem;
+  background-color: antiquewhite;
+  border-radius: 3px;
+  margin: 0px auto;
+  padding: 4px;
+  min-width: 100px;
+  max-width: 400px;
+}
+
+/*STYLING FOR THE KEY INGREDIENTS SECTION AND THE LIST*/
+
+.keyIngredContainer {
+  margin: 0px;
+  margin-top: 10px;
+  margin: 10px auto;
+  background-color: antiquewhite;
+  padding: 5px 0px;
+  list-style: none;
+}
+
+.keyIngredTitle {
+  margin: 10px auto;
+  border-bottom: 1px solid black;
+  line-height: 1.8rem;
+  width: 90%;
+}
+
+.keyIngredItem {
+  display: inline-block;
+  margin: 0px 3px;
+}
+
+.keyIngredItemsSection {
+  background-color: salmon;
+  color: white;
+}
+
+.keyIngredItemHeading {
+  background-color: black;
+  padding: 10px;
+  margin: 4px 0px;
+  border-radius: 10px;
+  text-transform: capitalize;
+}
+
+/*STYLING FOR THE BUTTON SECTION AND THE LIST*/
+.actionButtons {
+  width: 80%;
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  margin: auto;
+  margin-top: 10px;
+}
+
+/*STYLING FOR THE TITLE FOR THE LOVES AND THE SECTION*/
+
+.likingContainer,
+.userInLikingContainer {
+  background-color: salmon;
+  width: 100px;
+  height: 57px;
+  margin-left: auto;
+  margin-top: 30px;
+  border-radius: 30%;
+}
+
+.userInLikingContainer {
+  background-color: brown;
+}
+
+.likingContainer:hover,
+.userInLikingContainer:hover {
+  background-color: orange;
+  box-shadow: 0px 1px 1px 1px rgb(0, 0, 0, 0.4);
+}
+
+.loveTitle {
+  display: inline-block;
+  color: white;
+  margin-right: 4px;
+}
+/* 
+/*LAYOUT FOR THE DESKTOP*/
+@media (min-width: 1000px) and (max-width: 1035px) {
+  .mainCardContent {
+    max-width: 600px;
+    margin: 100px auto;
+  }
+}
+
+/*LAYOUT FOR THE DESKTOP*/
+
+@media (min-width: 1025px) and (orientation: landscape) {
+  .mainCardContent {
+    min-width: 340px;
+  }
+}

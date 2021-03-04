@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1b151;
+}
+
+.recipesCardSection {
+  margin-top: 10rem;
+}
+
+.loadingDivStyles {
+  text-align: center;
+  margin-top: 160px;
+}
+
+/*LABEL IN WHICH THE FILE PICKER INPUT IS PRESENT*/
+.fileLabel {
+  width: 95%;
+}
+
+/*STYLING FOR THE FILE PICKER BUTTON*/
+::-webkit-file-upload-button {
+  background-color: coral;
+  outline: none;
+  border: 0px;
+  border-radius: 1px;
+  padding: 0.4rem;
+}
+
+/*STYLING FOR THE FILE PICKER BUTTON WHEN HOVERED*/
+::-webkit-file-upload-button:hover {
+  background-color: black;
+  color: wheat;
+}
+
+/*CHANGE PHOTO BUTTON SECTION*/
+.changePhotoButtonSection {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/*LAYOUT FOR THE DESKTOP*/
+@media (min-width: 1024px) and (orientation: landscape) {
+  .recipesCardSection {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .fileLabel {
+    width: 45%;
+  }
+}
+
+@media (min-width: 745px) and (max-width: 1023px) and (orientation: portrait) {
+  .fileLabel {
+    width: 45%;
+  }
+}
+
+@media (min-width: 545px) and (max-width: 1023px) and (orientation: landscape) {
+  .fileLabel {
+    width: 65%;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: portrait) {
+  .fileLabel {
+    width: 45%;
+  }
+}

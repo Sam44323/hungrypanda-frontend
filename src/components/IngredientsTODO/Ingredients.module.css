@@ -1,0 +1,10 @@
+.addButtonSection {
+  text-align: center;
+}
+
+.ingredInput {
+  border-bottom-color: black;
+  width: 30%;
+  margin: 4px auto;
+  text-align: center;
+}

@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+.navLinksMobileContainer {
+  list-style: none;
+  width: 100%;
+  text-align: center;
+  margin: 40px 0px;
+}
+
+.navlinksContainer {
+  display: inline-block;
+  list-style: none;
+  margin-right: 30px;
+}

@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+label,
+input,
+textarea {
+  display: block;
+  width: 90%;
+  margin: auto;
+}
+
+input,
+textarea {
+  font-size: 1.3rem;
+  background-color: transparent;
+  border: 0px;
+  border-bottom: 3px solid brown;
+  outline: none;
+}
+
+label {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+textarea {
+  border: 3px solid brown;
+  border-radius: 10px;
+  height: 150px;
+}
+
+/* STYLLING FOR THE FILE PICKER INPUT*/
+
+input[type='file'] {
+  font-size: 1rem;
+  border: 0px;
+  background-color: #f1b151;
+  font-family: inherit;
+  border-radius: 30px;
+}
+
+/*STYLING FOR THE INVALID MESSAGE*/
+.messageSection {
+  background-color: salmon;
+  color: red;
+  padding: 10px;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+}
+
+input:focus {
+  border-bottom: 3px solid salmon;
+}
+
+textarea:focus {
+  border: 3px solid salmon;
+}
+
+.inputSection {
+  margin-bottom: 30px;
+}
+
+/*FOR HIDING THE ARROWS FROM THE NUMBER TYPE INPUTS*/
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/*STYLING FOR THE INPUT OF TYPE NUMBER*/
+
+.numberInput {
+  width: 30%;
+  display: inline-block;
+}
+/*for the input field*/
+input[type='number'] {
+  text-align: center;
+}
+
+/*FOR THE DEVICES OF TABLETS AND SOME BIGGER*/
+@media (min-width: 745px) and (max-width: 1023px) and (orientation: portrait) {
+  textarea {
+    height: 100px;
+  }
+}
+
+@media (min-width: 1024px) and (orientation: portrait) {
+  textarea {
+    height: 190px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fileLabel {
+    width: 45%;
+  }
+}

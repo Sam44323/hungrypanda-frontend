@@ -19,6 +19,7 @@ class MyProfile extends Component {
     if (tokenChecker()) {
       return this.props.history.replace('/auth/login');
     }
+
     axios(
       axiosMethod(
         'GET',
@@ -33,7 +34,6 @@ class MyProfile extends Component {
     )
       .then((user) => {
         if (user) {
-          user.data.user.image = `${process.env.REACT_APP_ASSET_URL}/${user.data.user.image}`;
           this.setState({
             userData: { ...user.data.user, totalLikes: user.data.totalLikes },
             loading: false,

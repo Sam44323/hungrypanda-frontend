@@ -52,7 +52,6 @@ class Login extends PureComponent {
       email: this.state.email.value,
       password: this.state.password.value,
     };
-
     axios(
       axiosMethod(
         'POST',

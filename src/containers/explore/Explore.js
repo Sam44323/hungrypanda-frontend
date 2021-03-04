@@ -24,6 +24,7 @@ class Explore extends PureComponent {
     }
     this.axiosCancelSource = axios.CancelToken.source();
     this.setState({ loading: true });
+
     axios(
       axiosMethod(
         'GET',
@@ -36,9 +37,6 @@ class Explore extends PureComponent {
     )
       .then((recipes) => {
         if (recipes) {
-          for (let recipe of recipes.data.recipes) {
-            recipe.image = `${process.env.REACT_APP_ASSET_URL}/${recipe.image}`;
-          }
           this.setState({
             recipes: recipes.data.recipes,
             loading: false,
@@ -63,9 +61,6 @@ class Explore extends PureComponent {
     )
       .then((response) => {
         if (response) {
-          for (let recipe of response.data.recipes) {
-            recipe.image = `${process.env.REACT_APP_ASSET_URL}/${recipe.image}`;
-          }
           this.setState({ recipes: response.data.recipes });
         }
       })

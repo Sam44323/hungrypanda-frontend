@@ -35,7 +35,6 @@ class RecipeDetails extends Component {
     )
       .then((recipe) => {
         if (recipe) {
-          recipe.data.recipe.image = `${process.env.REACT_APP_ASSET_URL}/${recipe.data.recipe.image}`;
           this.setState({
             recipe: { ...recipe.data.recipe },
             loading: false,
@@ -68,9 +67,6 @@ class RecipeDetails extends Component {
           const recipeIndex = response.data.recipes.findIndex(
             (recipe) => recipe._id === recipeId
           );
-          response.data.recipes[
-            recipeIndex
-          ].image = `${process.env.REACT_APP_ASSET_URL}/${response.data.recipes[recipeIndex].image}`;
           this.setState({ recipe: response.data.recipes[recipeIndex] });
         }
       })

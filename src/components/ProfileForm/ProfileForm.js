@@ -1,7 +1,6 @@
 import React from 'react';
 
 import styles from './ProfileForm.module.css';
-import sharedStyles from '../../containers/shared/sharedStyles/styles.module.css';
 import btnStyles from '../Button/Button.module.css';
 import Input from './ProfileInput/ProfileInput';
 import FAICON from '../FontAwesome/FontAwesome';
@@ -52,23 +51,6 @@ const ProfileForm = (props) => {
         <h1 className={styles.userDataTitle}>
           My Profile <FAICON iconName='faUser' color='brown' />
         </h1>
-        {!props.imageData.value ? (
-          <Input
-            name={props.imageData.name}
-            type='file'
-            changeAction={props.imageValueHandler}
-          />
-        ) : (
-          <div className={sharedStyles.changePhotoButtonSection}>
-            <Button
-              class={`${btnStyles.EditPhoto}`}
-              clickAction={() => props.changeAction(null)}
-            >
-              Change Photo
-            </Button>
-          </div>
-        )}
-
         {dataInput}
       </div>
       <div className={styles.socialMediaSection}>

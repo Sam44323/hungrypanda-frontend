@@ -23,10 +23,11 @@ class UserPage extends Component {
       return this.props.history.replace('/auth/login');
     }
     this.setState({ loading: true });
+
     axios(
       axiosMethod(
         'GET',
-        `${
+        `    ${
           process.env.REACT_APP_BACKEND_URL_RECIPES
         }/myrecipes/${localStorage.getItem('userId')}`,
         null,
@@ -37,9 +38,6 @@ class UserPage extends Component {
     )
       .then((recipesData) => {
         if (recipesData) {
-          for (let recipe of recipesData.data.recipes) {
-            recipe.image = `${process.env.REACT_APP_ASSET_URL}/${recipe.image}`;
-          }
           this.setState({
             recipes: [...recipesData.data.recipes],
             loading: false,
@@ -67,6 +65,7 @@ class UserPage extends Component {
       recipes: [...recipesArray],
       hasRecipe: recipesArray.length > 0 ? true : false,
     });
+
     axios(
       axiosMethod(
         'DELETE',

@@ -5,7 +5,6 @@ import {
   getTextField,
   timeValue,
   ingObjectCreator,
-  getImageField,
 } from '../../components/Constants/utilityFunction/createStateValue';
 
 import sharedStyles from '../shared/sharedStyles/styles.module.css';
@@ -20,13 +19,19 @@ import axiosMethod from '../util/axiosMethodCreator';
 class AddRecipes extends PureComponent {
   state = {
     loading: false,
-    image: getImageField('Image', 'image'),
     textFieldName: [
       getTextField(
         'Recipe Name',
         'name',
         'text',
         'Enter the recipe name!',
+        false
+      ),
+      getTextField(
+        'Image',
+        'image',
+        'text',
+        'Please enter an image for the recipe!',
         false
       ),
       getTextField(
@@ -83,11 +88,6 @@ class AddRecipes extends PureComponent {
     }
   };
 
-  //FOR CHANGING THE VALUE OF THE IMAGE FILE
-  imageValueChangeHandler = (value) => {
-    this.setState({ image: { ...this.state.image, value } });
-  };
-
   //CHECKING THE VALIDATION OF THE FORM
   checkFormValidation = () => {
     let c = 0;
@@ -96,7 +96,7 @@ class AddRecipes extends PureComponent {
         c++;
       }
     }
-    return c === 3;
+    return c === 4;
   };
 
   //ADDING THE INGREDIENTS TO THE RESPECTIVE ARRAYS
@@ -116,43 +116,26 @@ class AddRecipes extends PureComponent {
   //FOR SUBMITTING THE FORM
   submitForm = () => {
     this.setState({ loading: true });
-    const bodyFormData = new FormData();
-
-    bodyFormData.append('name', this.state.textFieldName[0].value.trim());
-    bodyFormData.append('image', this.state.image.value);
-    bodyFormData.append(
-      'description',
-      this.state.textFieldName[1].value.trim()
-    );
-    bodyFormData.append('procedure', this.state.textFieldName[2].value.trim());
-    bodyFormData.append(
-      'cookTime',
-      JSON.stringify({
+    const data = {
+      name: this.state.textFieldName[0].value.trim(),
+      image: this.state.textFieldName[1].value.trim(),
+      description: this.state.textFieldName[2].value.trim(),
+      procedure: this.state.textFieldName[3].value.trim(),
+      cookTime: {
         hours: parseFloat(this.state.numberFieldName[0].value),
         minutes: parseFloat(this.state.numberFieldName[1].value),
-      })
-    );
-    bodyFormData.append(
-      'keyIngred',
-      JSON.stringify(
-        this.state.keyingredients.ing.map((item) => item.value.trim())
-      )
-    );
-    bodyFormData.append(
-      'ingredients',
-      JSON.stringify(
-        this.state.ingredients.ing.map((item) => item.value.trim())
-      )
-    );
-
+      },
+      keyIngred: this.state.keyingredients.ing.map((item) => item.value.trim()),
+      ingredients: this.state.ingredients.ing.map((item) => item.value.trim()),
+    };
     axios(
       axiosMethod(
         'POST',
         `${process.env.REACT_APP_BACKEND_URL_RECIPES}/addrecipe`,
-        bodyFormData,
+        data,
         {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
-          'Content-Type': 'multipart/form-data',
+          'Content-Type': 'application/json',
         }
       )
     ).then((resp) => {
@@ -186,8 +169,6 @@ class AddRecipes extends PureComponent {
         ) : (
           <Form
             submitForm={this.submitForm}
-            imageField={this.state.image}
-            fileActionMethod={this.imageValueChangeHandler}
             textFieldName={this.state.textFieldName}
             numberFieldName={this.state.numberFieldName}
             ingredients={this.state.ingredients}

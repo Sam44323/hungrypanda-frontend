@@ -2,7 +2,6 @@ import React from 'react';
 import uuid from 'react-uuid';
 
 import styles from './Form.module.css';
-import sharedStyles from '../../containers/shared/sharedStyles/styles.module.css';
 import btnStyles from '../Button/Button.module.css';
 import Input from './InputFields/Input';
 import Button from '../Button/Button';
@@ -69,22 +68,6 @@ const Form = (props) => {
   return (
     <React.Fragment>
       <div className={styles.formSection} style={{ marginTop: '100px' }}>
-        {!props.imageField.value ? (
-          <Input
-            type='file'
-            name={props.imageField.name}
-            fileActionHandler={props.fileActionMethod}
-          />
-        ) : (
-          <div className={sharedStyles.changePhotoButtonSection}>
-            <Button
-              class={`${btnStyles.EditPhoto}`}
-              clickAction={() => props.fileActionMethod(null)}
-            >
-              Change Photo
-            </Button>
-          </div>
-        )}
         {numberInputs}
         {textInputs}
         <div className={styles.ingredientsSection}>

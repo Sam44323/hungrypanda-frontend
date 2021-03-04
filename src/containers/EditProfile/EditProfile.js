@@ -4,7 +4,6 @@ import Loader from 'react-loader-spinner';
 import {
   socialMediaObjectCreator,
   userInputDetailState,
-  getImageField,
 } from '../../components/Constants/utilityFunction/createStateValue';
 
 import sharedStyles from '../shared/sharedStyles/styles.module.css';
@@ -18,9 +17,9 @@ import axiosMethod from '../util/axiosMethodCreator';
 class EditProfile extends PureComponent {
   state = {
     loading: false,
-    image: getImageField('Profile picture', 'profilePicture'),
     userData: {
       name: {},
+      image: {},
       email: {},
       userName: {},
       age: {},
@@ -46,7 +45,6 @@ class EditProfile extends PureComponent {
         null,
         {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
-          'Content-Type': 'multipart/form-data',
         }
       )
     ).then((user) => {
@@ -57,6 +55,13 @@ class EditProfile extends PureComponent {
             true,
             'Enter a name!',
             user.data.user.name,
+            true
+          ),
+          image: userInputDetailState(
+            'Profile Picture',
+            true,
+            'Enter an image url!',
+            user.data.user.image,
             true
           ),
           email: userInputDetailState(
@@ -115,7 +120,7 @@ class EditProfile extends PureComponent {
     if (
       name === 'name' ||
       name === 'userName' ||
-      name === 'profilePicture' ||
+      name === 'image' ||
       name === 'city'
     ) {
       return value === '' ? false : true;
@@ -124,11 +129,6 @@ class EditProfile extends PureComponent {
     } else if (name === 'email') {
       return /.+@.+\.[A-Za-z]+$/.test(value);
     }
-  };
-
-  //FOR CHANGING THE VALUE OF THE IMAGE
-  changeImageValue = (value) => {
-    this.setState({ image: { ...this.state.image, value } });
   };
 
   //FOR CHANGING THE VALUE OF THE userData OBJECT
@@ -151,17 +151,14 @@ class EditProfile extends PureComponent {
 
   submitForm = () => {
     this.setState({ loading: true });
-    const bodyFormData = new FormData();
-
-    bodyFormData.append('image', this.state.image.value);
-    bodyFormData.append('name', this.state.userData.name.value.trim());
-    bodyFormData.append('email', this.state.userData.email.value.trim());
-    bodyFormData.append('userName', this.state.userData.userName.value.trim());
-    bodyFormData.append('age', JSON.parse(this.state.userData.age.value));
-    bodyFormData.append('location', this.state.userData.city.value.trim());
-    bodyFormData.append(
-      'socialMedia',
-      JSON.stringify([
+    const data = {
+      name: this.state.userData.name.value.trim(),
+      image: this.state.userData.image.value.trim(),
+      email: this.state.userData.email.value.trim(),
+      userName: this.state.userData.userName.value.trim(),
+      age: this.state.userData.age.value,
+      location: this.state.userData.city.value.trim(),
+      socialMedia: [
         {
           name: 'Facebook',
           value: this.state.socialMedia.fb.value.trim(),
@@ -177,17 +174,17 @@ class EditProfile extends PureComponent {
           value: this.state.socialMedia.twitter.value.trim(),
           hasValue: this.state.socialMedia.twitter.hasValue,
         },
-      ])
-    );
+      ],
+    };
 
     axios(
       axiosMethod(
         'PATCH',
         `${process.env.REACT_APP_BACKEND_URL_USERS}/editprofile/${this.props.match.params.id}`,
-        bodyFormData,
+        data,
         {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
-          'Content-Type': 'multipart/form-data',
+          'Content-Type': 'application/json',
         }
       )
     ).then((response) => {
@@ -209,11 +206,9 @@ class EditProfile extends PureComponent {
         ) : (
           <ProfileForm
             submitForm={this.submitForm}
-            imageData={this.state.image}
-            imageValueHandler={this.changeImageValue}
             userData={this.state.userData}
             socialMedia={this.state.socialMedia}
-            userDataLength={5}
+            userDataLength={6}
             changeDataValue={this.changeDataValue}
             socialMediaDataChange={this.socialMediaDataChange}
             btntext='Update'

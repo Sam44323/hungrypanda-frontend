@@ -1,5 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFacebook,
   faTwitter,
@@ -22,7 +21,7 @@ const ProfileMain = (props) => {
       return (
         <a href={item.value} key={item.name}>
           <div className={styles.socialMediaSectionDiv}>
-            <FontAwesomeIcon icon={icon} />
+            <FAICON iconName={icon} />
           </div>
         </a>
       );
@@ -81,6 +80,10 @@ const ProfileMain = (props) => {
         </div>
         <div className={styles.socialMediaSectionContainer}>
           {socialMediaLinks}
+        </div>
+        <div className={styles.deleteAccount} onClick={props.deleteAccount}>
+          <FAICON iconName={constants.FADELETE} color='red' />
+          <p className={styles.deleteAccPara}>Delete</p>
         </div>
       </div>
     </React.Fragment>

@@ -70,7 +70,6 @@ class MyProfile extends Component {
       })
       .catch((err) => {
         if (err) {
-          console.dir(err);
           this.setState({ loading: false, error: 'Network Error!' });
         }
       });
